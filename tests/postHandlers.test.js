@@ -15,7 +15,7 @@ const requestBody = {
     ]
 }
 
-test('check after calcaultaion that status code is 200', async () => {
+test(' status code should be 200', async () => {
     let actualStatus;
 	try {
 		const response = await fetch(`${config.API_URL}/everything-you-need/v1/calculate`, {
@@ -32,7 +32,7 @@ test('check after calcaultaion that status code is 200', async () => {
 	expect(actualStatus).toBe(200);
 });
 
-test('check that price is 9', async () => {
+test('warehouse should be working: true', async () => {
     let data;
 	try {
 		const response = await fetch(`${config.API_URL}/everything-you-need/v1/calculate`, {
@@ -46,5 +46,5 @@ test('check that price is 9', async () => {
 	} catch (error) {
 		console.error(error);
 	}
-	expect(data.price).toBe(9);
+	expect(data.isWarehouseWorking).toBe(true);
 });

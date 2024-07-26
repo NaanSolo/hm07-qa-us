@@ -23,7 +23,7 @@ const requestBody = {
     ]
 }
 
-test('check that ok is true', async () => {
+test("'ok' should be true", async () => {
     let data;
 	try {
 		const response = await fetch(`${config.API_URL}/api/v1/kits/3`, {
@@ -34,13 +34,12 @@ test('check that ok is true', async () => {
 			body: JSON.stringify(requestBody)
 		});
 		data = await response.json();
-		console.log(data);
 	} catch (error) {
 		console.error(error);
 	} expect(data.ok).toBe(true);
 });
 
-test('check that status code is 200', async () => {
+test('status code should be 200', async () => {
     let actualStatus;
 	try {
 		const response = await fetch(`${config.API_URL}/api/v1/kits/3`, {

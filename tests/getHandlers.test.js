@@ -18,7 +18,6 @@ test('number of warehouses should be greater than 0', async () => {
     try {
         const response = await fetch(`${config.API_URL}/api/v1/warehouses`);
 		data = await response.json();
-		console.log(data);
     } catch (error) {
         console.error(error);
     }
