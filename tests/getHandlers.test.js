@@ -13,7 +13,7 @@ test('status should be 200', async () => {
 });
 
 
-test('number of warehouses should be greater than 0', async () => {
+test('name Should be "Everything You Need" in first element in result', async () => {
     let data;
     try {
         const response = await fetch(`${config.API_URL}/api/v1/warehouses`);
@@ -21,7 +21,6 @@ test('number of warehouses should be greater than 0', async () => {
     } catch (error) {
         console.error(error);
     }
-    const countStores = data.length;
-    expect(countStores).toBeGreaterThan(0);
+    expect(data[0].name).toBe("Everything You Need");
 });
 

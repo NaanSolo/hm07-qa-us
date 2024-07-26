@@ -23,7 +23,7 @@ const requestBody = {
     ]
 }
 
-test("'ok' should be true", async () => {
+test("Should have 'ok' to be true", async () => {
     let data;
 	try {
 		const response = await fetch(`${config.API_URL}/api/v1/kits/3`, {
@@ -39,7 +39,7 @@ test("'ok' should be true", async () => {
 	} expect(data.ok).toBe(true);
 });
 
-test('status code should be 200', async () => {
+test('Should have status code 200', async () => {
     let actualStatus;
 	try {
 		const response = await fetch(`${config.API_URL}/api/v1/kits/3`, {
